@@ -1,0 +1,221 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: pink;
+
+    margin: 0;
+    /* overflow: hidden; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle-btn{
+    width: 7rem;
+    height: 7rem;
+    background-color: rgb(246, 50, 82);
+    color:#fff;
+
+    border-radius: 50%;
+    position: absolute;
+    bottom: 3.5rem;
+    right: 3rem;
+    font-size: 2.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+.toggle-btn:active{
+    transform: scale(0.98);
+}
+.toggle-btn.ani{
+    background: radial-gradient(rgb(246, 50, 82) 45%,rgb(255, 126, 176) 0 67%,rgb(255, 255, 255,0.8) 0 100%);
+}
+.toggle-btn.ani .circle{
+    width: 12rem;
+    height: 12rem;
+    background-color: transparent;
+    border-radius: 50%;
+  
+    border:10px solid rgb(255, 255, 255,0.6);
+    position: absolute;
+
+    animation: myani 0.7s ease-in;
+
+}
+.menu-container{
+    width: 350px;
+    background-color: black;
+    color:#fff;
+    font-size: 1.3rem;
+    border-radius: 30px;
+    padding: 20px;
+
+    box-shadow: 0px 3px 10px palevioletred;
+
+    position: absolute;
+    right: 3.3rem;
+    bottom: 14rem;
+    
+    display: none;
+}
+.toggle-btn.click + .menu-container{
+    display: block;
+}
+.menu-icon{
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.menu-icon i{
+    margin-right: 1.3rem;
+}
+.menu-icon i:hover,.menu-icon .menu-text:hover{
+    color: pink;
+}
+.menu-icon .menu-text{
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+.active{
+    color:rgb(246, 50, 82);
+}
+
+@keyframes myani{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
+
+/* Animated Login UI */
+.container{
+    position: absolute;
+    top:50%;
+    left: 200px;
+    transform: translateY(-50%);
+}
+.main-container{
+    width: 700px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgb(246, 50, 82,0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.img-container{
+    width: 50%;
+    height: 450px;
+    box-shadow: 0px 0px 10px rgb(250, 197, 206,0.4);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 500px;
+
+    animation: imgani 1s linear;
+}
+.img-container img{
+    width: 80%;
+    height: 80%;
+}
+.loginui .img-container{
+    animation: loginimgani 1s linear;
+}
+.form-container{
+    width: 50%;
+    height: 450px;
+    padding: 0 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: formani 1s linear;
+}
+form .form-control{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 0;
+    background-color: pink;
+}
+.form-control:focus{
+    outline-color: rgb(255, 127, 148);
+}
+form .btn{
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(255, 146, 164);
+    color:gray;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 5px;
+}
+.btn:active{
+    transform: scale(0.98);
+}
+form a{
+    text-decoration: none;
+    font-size: 17px;
+    padding: 0 4px;
+}
+form span{
+    display: block;
+    margin: 10px 0;
+    padding: 0 4px;
+}
+.signupui,.forgotui{
+    display: none;
+}
+.forgotui{
+    position:relative;
+}
+.close{
+    font-size: 1.5rem;
+    position: absolute;
+    top:30px;
+    left: 30px;
+}
+
+@keyframes formani{
+    0%{
+        transform:scaleX(0);
+    }
+    100%{
+        transform:scaleX(1);
+    }
+}
+
+@keyframes imgani{
+    0%{
+        transform:translateX(100%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+@keyframes loginimgani{
+    0%{
+        transform:translateX(-100%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
